@@ -75,26 +75,26 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-dvh pt-32 sm:pt-40">
-      <section>
-        <h1 className="text-xl sm:text-3xl font-bold text-gray-800 mb-2 sm:mb-4 text-center">
+    <div className="min-h-dvh pt-32 sm:pt-40 bg-gradient-to-b from-blue-50 to-white">
+      <section className="mx-auto max-w-2xl text-center bg-white/80 backdrop-blur p-6 rounded-xl shadow">
+        <h1 className="text-xl sm:text-3xl font-bold text-gray-800 mb-2 sm:mb-4">
           Let us analyze your webpage
         </h1>
         <UrlInput />
       </section>
 
       {loggedIn && (
-        <section className="mt-10">
-        <h2 className="text-lg font-semibold mb-4 text-center">Your URL History</h2>
-            <UrlHistoryTable
-              urls={urls}
-              onBulkDelete={handleBulkDelete}
-              onBulkRerun={handleBulkRerun}
-              onStop={handleStop}
-              onResume={handleResume}
-            />
+        <section className="mt-10 mx-auto max-w-4xl">
+          <h2 className="text-lg font-semibold mb-4 text-center">Your URL History</h2>
+          <UrlHistoryTable
+            urls={urls}
+            onBulkDelete={handleBulkDelete}
+            onBulkRerun={handleBulkRerun}
+            onStop={handleStop}
+            onResume={handleResume}
+          />
         </section>
-      )} 
+      )}
     </div>
   );
 }
